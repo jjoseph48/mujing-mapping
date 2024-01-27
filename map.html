@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Destinasi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tambahkan SweetAlert CDN ke bagian head HTML Anda -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <div id="mapContainer" onclick="showPopup(event)">
+        <div id="map">
+            <!-- Rumah Perangkat Desa -->
+            <div class="marker" style="top: 400px; left: 180px;" data-info="UMKM Cahaya Mentari : Sagon Basah"
+                data-image="image/sagon.jpeg"></div>
+            <div class="marker" style="top: 250px; left: 200px;" data-info="Sanggar Seni : Ngudi Laras"
+                data-image="image/Sanggar.jpeg"></div>
+            <div class="marker" style="top: 300px; left: 600px;" data-info="Petilasan Mbah Kunto"
+                data-image="image/petilasan.jpg"></div>
+            <div class="marker" style="top: 480px; left: 980px;" data-info="Destinasi Wisata : Villa Arga Sejahtera"
+                data-image="image/villa.jpg"></div>
+        </div>
+    </div>
+
+    <!-- Informasi Kompas dan Jalan -->
+    <div id="infoContainer">
+        <div id="directions">
+            <img src="image/kompas.jpg" alt="Arah Mata Angin">
+        </div>
+
+        <div id="roadInfo">
+            <p>Jalan Utama</p>
+            <img src="image/line.jpg" width="50px" alt="Garis">
+            <p>Jalan Kecil</p>
+            <img src="image/dash line.jpg" width="50px" alt="Garis Titik-titik">
+        </div>
+
+        <!-- Informasi mengenai tanggal pembuatan denah -->
+        <div id="dateInfo">
+            <p>Tanggal Pembuatan : </p>
+            <p>31 Januari 2024</p>
+        </div>
+
+    </div>
+
+    <button id="backButton" onclick="goBack()">Kembali ke Homepage</button>
+
+    <script>
+        function goBack() {
+            // Tambahkan kelas 'fade-out' sebelum navigasi untuk efek fade-out
+            document.body.classList.add('fade-out');
+            setTimeout(function () {
+                // Setelah 500ms (sesuai durasi transisi di CSS), lakukan navigasi
+                window.location.href = "index.html";
+            }, 50);
+        }
+
+        function showPopup(event) {
+            if (event.target.classList.contains('marker')) {
+                var info = event.target.getAttribute('data-info');
+                var image = event.target.getAttribute('data-image');
+                showSweetAlert(info, image);
+            }
+        }
+
+        function showSweetAlert(info, image) {
+            Swal.fire({
+                title: 'Informasi Destinasi Wisata',
+                html: `<p>${info}</p><img src="${image}" style="max-width: 100%; max-height: 300px;">`,
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

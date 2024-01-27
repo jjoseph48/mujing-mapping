@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padukuhan Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tambahkan font Google (contoh: Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="homepage">
+        <h1>Selamat Datang di Padukuhan Mujing</h1>
+        <p>
+            Dari UMKM Cahaya Mentari hingga Sanggar Seni Ngudi Laras, setiap sudut Padukuhan Mujing memiliki keindahan dan cerita tersendiri. Temukan 
+            nuansa sejarah di Petilasan Mbah Kunto dan nikmati ketenangan alam di Villa Arga Sejahtera. Selamat menikmati keindahan yang disajikan dengan penuh kehangatan oleh padukuhan ini!
+        </p>
+        <p>
+            Mari temukan pesona Padukuhan Mujing, di mana seni dan keramahan 
+            bertemu untuk menciptakan pengalaman wisata yang tak terlupakan.
+        </p>
+        <button onclick="showMap()">Lihat Peta</button>
+        <button onclick="visitInstagram()">Kunjungi Instagram</button>
+        <button onclick="visitInstagramUMKM()">Kunjungi Instagram UMKM</button>
+    </div>
+
+    <script>
+        function showMap() {
+            // Tambahkan kelas 'fade-out' sebelum navigasi untuk efek fade-out
+            document.body.classList.add('fade-out');
+            setTimeout(function () {
+                // Setelah 500ms (sesuai durasi transisi di CSS), lakukan navigasi
+                window.location.href = "map.html";
+            }, 50);
+        }
+        function visitInstagram() {
+            window.open("https://www.instagram.com/padukuhanmujing/");
+        }
+        function visitInstagramUMKM() {
+            window.open("https://www.instagram.com/sagoncahayamentari/");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    color: #333; /* Warna teks pada gambar background */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('image/background.jpeg'); /* Ganti dengan path gambar sesuai kebutuhan */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Adjust the blur radius as needed */
+}
+
+#homepage {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    color: rgb(48, 48, 48);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk homepage */
+#homepage p {
+    font-size: 1.2em;
+    color: #333; /* Warna font pada homepage */
+    line-height: 1.5;
+}
+
+button {
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3367d6;
+}
+
+/* Efek fade-out */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#mapContainer {
+    /* display: none; */
+    position: relative;
+    width: 70%;
+    height: 500px;
+}
+
+#map {
+    width: 1100px;
+    height: 500px;
+    background-image: url('image/peta.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.marker:hover {
+    transform: scale(1.2);
+}
+
+#backButton {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#infoContainer {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    text-align: right;
+    color: #333;
+}
+
+#directions img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+/* Style untuk map */
+#roadInfo p {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #fff; /* Warna font pada map */
+    line-height: 1.5;
+}
+
+#dateInfo {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 150px;
+}
+
+#dateInfo p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#dateInfo p:first-child {
+    font-weight: bold;
+}
+
+#dateInfo p:last-child {
+    font-style: italic;
+}
